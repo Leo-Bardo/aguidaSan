@@ -1,0 +1,140 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #dbdada;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Permitir desplazamiento horizontal */
+        }
+
+        .header, .section {
+            margin-bottom: 20px;
+        }
+
+        .header h1, .header h2, .section h3 {
+            margin: 0;
+            padding: 5px;
+            background-color: #e2e2e2;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+        }
+
+        .header h2 {
+            font-size: 20px;
+        }
+
+        .section h3 {
+            font-size: 18px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            table-layout: auto;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .header h2 {
+                font-size: 18px;
+            }
+
+            .section h3 {
+                font-size: 16px;
+            }
+        }
+        .container {
+            position: relative;
+            margin: 20px;
+        }
+  /* estilos/registros.css */
+
+.container {
+    position: relative;
+}
+
+.btn-generar-excel {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    background-color: #1a1a1c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-generar-excel:hover {
+    background-color: #5a6268; /* Gris más oscuro en hover */
+}
+
+.btn-regresar {
+    position: absolute;
+    top: 1px;
+    right: 155px; /* Ajusta la distancia desde el borde derecho */
+    background-color: #1a1a1c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Elimina cualquier subrayado en el enlace si es necesario */
+    margin: 0; /* Elimina cualquier margen extra */
+}
+
+.btn-regresar:hover {
+    background-color: #5a6268; /* Gris más oscuro en hover */
+}
+/* Asegúrate de que las tablas no se desborden en dispositivos grandes */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Mejora la experiencia de desplazamiento en iOS */
+    margin: 0 auto;
+}
+
+/* Opcional: Estilo de la tabla para asegurarte de que ocupe el 100% del contenedor */
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Asegúrate de que el diseño sea responsivo */
+@media (max-width: 768px) {
+    .table-wrapper {
+        margin: 0;
+    }
+}

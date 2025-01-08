@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock - Control de Almacén</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .boton {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: 200px; /* Ajusta el ancho de la carta según sea necesario */
+        }
+
+        .boton:hover {
+            transform: translateY(-5px);
+        }
+
+        .boton img {
+            width: 100px;
+            height: auto;
+        }
+
+        .boton span {
+            margin-top: 15px;
+            font-size: 1.2rem; /* Ajusta el tamaño del texto aquí */
+            color: #ffffff; /* Cambia el color del texto */
+            text-align: center;
+            text-transform: uppercase; /* Convierte el texto a mayúsculas */
+            font-weight: bold; /* Añade negrita al texto */
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px 0;
+            color: #333;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Incluir la barra de navegación -->
+    <div id="navbar-container"></div>
+
+    <!-- Título -->
+    <h1 style="text-align: center; margin-top: 20px; color: #666666;">Stock de Sanitizantes - Control de Almacén</h1>
+
+    <div class="container">
+        <a href="ejemplo.php" class="boton animate__animated animate__bounceIn" data-category="Ácidos">
+            <img src="img/acidos.png" alt="Ácidos">
+            <span>Ácidos</span>
+        </a>
+        <a href="neutros.php" class="boton animate__animated animate__bounceIn" data-category="Neutros">
+            <img src="img/neutros.png" alt="Neutros">
+            <span>Neutros</span>
+        </a>
+        <a href="alcalinos.php" class="boton animate__animated animate__bounceIn" data-category="Alcalinos">
+            <img src="img/alcalinos.png" alt="Alcalinos">
+            <span>Alcalinos</span>
+        </a>
+        <a href="peroxidos.php" class="boton animate__animated animate__bounceIn" data-category="Peroxidos">
+            <img src="img/peroxidos.png" alt="Peroxidos">
+            <span>Peroxidos</span>
+        </a>
+        <a href="MMPP.php" class="boton animate__animated animate__bounceIn" data-category="MMPP">
+            <img src="img/mmpp.png" alt="MMPP">
+            <span>MMPP</span>
+        </a>
+        <a href="otros.php" class="boton animate__animated animate__bounceIn" data-category="Otros">
+            <img src="img/otros.png" alt="Otros">
+            <span>Otros</span>
+        </a>
+    </div>
+
+    <script>
+        document.querySelectorAll('.boton').forEach(boton => {
+            boton.onclick = function(e) {
+                e.preventDefault(); // Evita el comportamiento por defecto del enlace
+                let href = this.getAttribute('href');
+                let category = this.getAttribute('data-category');
+
+                Swal.fire({
+                    title: '¡BIENVENIDO!',
+                    text: `Has seleccionado el registro de: ${category}`,
+                    icon: 'success',
+                    confirmButtonColor: '#666666', 
+                    confirmButtonText: 'Aceptar',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeIn'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOut'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = href; // Redirige a la URL del enlace
+                    }
+                });
+            };
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar la barra de navegación desde un archivo externo
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+
+                    // Una vez cargada la barra de navegación, añadir el event listener para el menú
+                    const menuIcon = document.querySelector('.menu-icon');
+                    const drawer = document.getElementById('drawer');
+                    const overlay = document.querySelector('.overlay');
+                    const submenuItems = document.querySelectorAll('.submenu-label');
+                    const logoutButton = document.querySelector('.logout-button');
+
+                    menuIcon.addEventListener('click', function() {
+                        drawer.classList.toggle('open');
+                        overlay.classList.toggle('active');
+                    });
+
+                    overlay.addEventListener('click', function() {
+                        drawer.classList.remove('open');
+                        overlay.classList.remove('active');
+                    });
+
+                    submenuItems.forEach(item => {
+                        item.addEventListener('click', function() {
+                            this.querySelector('.submenu-content').classList.toggle('active');
+                        });
+                    });
+
+                    logoutButton.addEventListener('click', function() {
+                        Swal.fire({
+                            title: '¿Cerrar sesión?',
+                            text: '¿Estás seguro de que quieres cerrar sesión?',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#d33',
+                            cancelButtonColor: '#3085d6',
+                            confirmButtonText: 'Sí, cerrar sesión'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // Aquí puedes redirigir al usuario a la página de inicio de sesión
+                                window.location.href = 'pagina_de_inicio.html';
+                            }
+                        });
+                    });
+                })
+                .catch(error => console.error('Error al cargar la barra de navegación:', error));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las cartas horizontalmente */
+    gap: 20px; /* Espacio entre las cartas */
+    padding: 20px; /* Espacio interior del contenedor */
+}
+
+/* Estilo para cada carta */
+.boton {
+    display: flex; /* Usar flexbox para alinear contenido verticalmente */
+    flex-direction: column; /* Alinear contenido en columna */
+    align-items: center; /* Centrar contenido horizontalmente */
+    justify-content: center; /* Centrar contenido verticalmente */
+    text-align: center; /* Alinear texto en el centro */
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    padding: 20px; /* Ajustar según sea necesario */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem; /* Tamaño de letra inicial */
+    max-width: 250px; /* Ajusta el ancho máximo de cada carta */
+    flex: 1 1 calc(50% - 20px); /* Hace que cada carta ocupe el 50% del contenedor, menos el espacio entre ellas */
+    height: 250px; /* Altura fija para mantener las cartas cuadradas */
+}
+.sidebar {
+    z-index: 100; /* Asegura que el menú esté por encima de las modales */
+
+}
+/* Estilo para cuando se pasa el ratón por encima */
+.boton:hover {
+    background-color: #9E9E9E;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos adicionales para el texto dentro de cada carta */
+.boton span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.8rem; /* Tamaño de letra para el texto dentro de la carta */
+    font-weight: bold; /* Texto más llamativo */
+}
+/* Estilo para la imagen dentro de cada carta */
+.boton img {
+    max-width: 100%; /* Ajusta la imagen al ancho máximo del contenedor */
+    max-height: 80%; /* Ajusta la altura máxima de la imagen */
+    object-fit: contain; /* Ajusta la imagen para que se ajuste al contenedor sin distorsión */
+    margin-bottom: 10px; /* Espacio inferior entre la imagen y el texto */
+}
+/* Estilos adicionales para el span "Otros" */
+.otro-span {
+    font-size: 1.5rem; /* Tamaño de letra ajustado */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+}
