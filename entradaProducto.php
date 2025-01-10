@@ -15,7 +15,7 @@
     <!-- Incluir la barra de navegación -->
     <div id="navbar-container"></div>
     <div class="container">
-        <div class="title">SALIDAS</div>
+        <div class="title">ENTRADA</div>
         <form action="registro.php" name="bdaguidasan" method="POST" onsubmit="return validarFormulario()">
             <!-- Diseño y estilo para los campos de formulario -->
             <style>
