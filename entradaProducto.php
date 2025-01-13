@@ -1,96 +1,26 @@
+        <link rel="stylesheet" type="text/css" href="styles/cartastilo.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENTRADA-PRODUCTO</title>
-    <!-- ELIMINAR CDN -->
+    <title>SANITIZANTES</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-        <link rel="stylesheet" type="text/css" href="styles/cartastilo.css">
-
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <!-- Incluir la barra de navegación -->
     <div id="navbar-container"></div>
     <div class="container">
-        <div class="title">ENTRADA</div>
+        <div class="title">ENTRADAS</div>
         <form action="registro.php" name="bdaguidasan" method="POST" onsubmit="return validarFormulario()">
             <!-- Diseño y estilo para los campos de formulario -->
-            <style>
-                .input-box input:required,
-                .input-box select:required {
-                    border: 2.2px solid #1a1a1c;;
-                    
-                    transition: border-color 0.3s;
-                }
-            
-                .input-box input:invalid,
-                .input-box select:invalid {
-                    border-color: #1a1a1c; ;
-                }
-            </le>
-            <style>
-            .input-box input:required,
-            .input-box select:required {
-                border: 2px solid #ccc; /* Borde normal para campos requeridos */
-                
-                transition: border-color 0.3s;
-            }
-            
-            .input-box input:valid,
-            .input-box select:valid {
-                border-color: #A9A9A9; /* Borde para campos válidos */
-            }
-            
-            .input-box input:invalid,
-            .input-box select:invalid {
-                border-color: #1a1a1c; /* Borde  para campos inválidos */
-            }
-            </style>
-            <style>
-                .input-box input[type="text"],
-                .input-box input[type="number"],
-                .input-box select {
-                    width: 100%;
-                    padding: 10px;
-                   
-                    border-radius: 5px;
-                    transition: border-color 0.3s;
-                }
-               </style>
-               <style>
-                .user-details {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 1rem;
-                }
-        
-                .input-box {
-                    flex: 1 1 calc(50% - 1rem);
-                    display: flex;
-                    flex-direction: column;
-                }
-        
-                .input-box span.details {
-                    font-weight: bold;
-                    margin-bottom: 0.5rem;
-                }
-        
-                .input-box input,
-                .input-box select {
-                    width: 100%;
-                    padding: 0.8rem;
-                    border: 2px solid #ccc;
-                    border-radius: 5px;
-                    transition: border-color 0.3s;
-                }
-            </style>
+
              <!-- Termina Diseño -->
             <div class="user-details">
                 <div class="input-box">
-                    <span class="details">Pesador:</span>
+                    <span class="details">Ingrese el Nombre del Pesador:</span>
                     <input type="text" placeholder="Ingresa nombre" name="nombrePesador" required>
                 </div>
                 <div class="input-box">
@@ -98,8 +28,8 @@
                     <input type="date" id="fecha" name="fecha" required>
                 </div>
                 <div class="input-box">
-                    <span class="details">Recibe:</span>
-                    <input type="text" placeholder="Ingresa nombre" name="nombreReceptor" required>
+                    <span class="details">Ingrese Nombre de quien Entrego:</span>
+                    <input type="text" placeholder="Ingresa nombre" name="nombreEntrego" required>
                 </div>
                 <div class="input-box">
                     <label class="details">Seleccione el Área o Departamento:</label>
@@ -279,8 +209,8 @@
                 nombrePesador: "Ingrese el nombre del pesador",
                 fecha: "Ingresa una fecha válida",
                 nombreEntrego: "Ingresa el nombre del entregador",
-                area: "Área",
-                nombreReceptor: "Recibe",
+                area: "Selecciona un área",
+                nombreReceptor: "Ingrese el nombre del receptor",
                 turno: "Selecciona un turno",
                 produccionRealizada: "Ingresa la producción realizada",
                 producto: "Selecciona un producto",
