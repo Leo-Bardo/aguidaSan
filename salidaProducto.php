@@ -407,7 +407,7 @@
                             confirmButtonText: 'Sí, cerrar sesión'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.href = 'pagina_de_inicio.html';
+                                window.location.href = 'index.php';
                             }
                         });
                     });

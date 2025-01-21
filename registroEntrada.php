@@ -155,7 +155,7 @@ echo $var;
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // redirigir al usuario a la página de inicio de sesión
-                                window.location.href = 'pagina_de_inicio.html';
+                                window.location.href = 'index.php';
                             }
                         });
                     });

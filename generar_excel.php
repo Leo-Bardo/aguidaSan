@@ -114,7 +114,7 @@ $sheet = $spreadsheet->getActiveSheet();
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 
 // Agregar el logo
-$logoPath = 'imagenes/aguidalogo.png'; // Ruta del archivo del logo
+$logoPath = 'img/aguidalogo.png'; // Ruta del archivo del logo
 $drawing = new Drawing();
 $drawing->setName('Logo');
 $drawing->setDescription('Logo');

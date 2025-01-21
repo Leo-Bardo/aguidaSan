@@ -190,7 +190,7 @@
     <!-- Botón de regresar con imagen -->
     <div class="btn-regresar">
         <a href="materiales.html">
-            <img src="imagenes/regresar.png" alt="Regresar">
+            <img src="img/regresar.png" alt="Regresar">
         </a>
     </div>
 
@@ -239,7 +239,7 @@
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Aquí puedes redirigir al usuario a la página de inicio de sesión
-                                window.location.href = 'pagina_de_inicio.html';
+                                window.location.href = 'index.php';
                             }
                         });
                     });
